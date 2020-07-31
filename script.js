@@ -1,12 +1,18 @@
-var postManager = function () {
-
-    var container = document.getElementById('content');
-   
-    //YOUR CODE HERE
-    /* You have to order the following posts by userId (Ascending) then add them in a list inside the 'container' */
+const postManager =  () => {
+   const orderedPost =  posts.sort(function(a, b){return a.userId-b.userId});
+    let container = document.getElementById('content');
+for(let post of orderedPost){
+    container.innerHTML +=  
+    `<ul>
+     <li>
+      <h3>${post.userId} ${post.title}</h3>
+      <p>${post.body}</p>
+     </li>
+    </ul>`;
+}
 };
 
-postManager.prototype.posts = [
+const posts = [
     {
         userId: 3,
         id: 1,
@@ -39,4 +45,4 @@ postManager.prototype.posts = [
     },
 ];
 
-new postManager();
+ postManager();
